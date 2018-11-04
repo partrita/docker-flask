@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/p0bailey/docker-flask.svg?branch=master)](https://travis-ci.org/p0bailey/docker-flask)
-
+# 출처
 
 This image is a boilerplate for any Flask application,  pages are served by uwsgi and Nginx.
 
@@ -13,8 +12,7 @@ Source code: https://github.com/p0bailey/docker-flask
 
 DockerHub: https://hub.docker.com/r/p0bailey/docker-flask/
 
-![Hello Flask][2]
+# 참고할 것
 
-
-
-[2]: http://s14.postimg.org/mwmg7p0v5/hello_flask.png
+1. python 2.7 버전기준
+- 라즈베리파이에 사용하기 위함
