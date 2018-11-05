@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2> Conversion: molar concentration</h2>
+
+This program helps you to convert the weight (weight concentration) in the molar quantity (molar concentration) and
+vice versa.
+
+<form method=post action="">
+    {{form.csrf_token}}
+    {{( form.molecular_weight) }} kDa </br>
+    {{( form.mass ) }} {{ form.mass_unit }} </br>
+    {{( form.volume ) }} {{ form.volume_unit }} </br>
+    {{ form.submit }}
+    <!-- <input type=submit value=calculate> -->
+</form>
+
+<h3> Results: </h3>
+
+{% if result != None %}
+{{result}} [mM]
+{% endif %}
+
+{% endblock %}
