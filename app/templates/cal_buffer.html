@@ -4,15 +4,17 @@
 <h2> Buffer calculator : molar concentration</h2>
 
 This program helps you to convert the weight (weight concentration) in the molar quantity (molar concentration) and
-vice versa.
+vice versa. </br>
 
 <form method=post action="">
     {{form.csrf_token}}
-    {{( form.molecular_weight) }} g/L </br>
-    {{( form.molar ) }} {{ form.molar_unit }} </br>
-    {{( form.volume ) }} {{ form.volume_unit }} </br>
-    {{( form.mass ) }} {{ form.mass_unit }} </br>
-    {{ form.submit }}
+    {{ form.molecular_weight(class="form-group") }} g/L </br>
+    <div class="form-inline mb-2">
+        {{( form.molar(class="mr-sm-2") ) }} {{ form.molar_unit(class="mr-sm-2") }} </br>
+        {{( form.volume(class="mr-sm-2") ) }} {{ form.volume_unit(class="mr-sm-2") }} </br>
+    </div>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    {{ form.submit(class="btn btn-primary") }}
     <!-- <input type=submit value=calculate> -->
 </form>
 
