@@ -1,18 +1,13 @@
+# 해야 할 일
+
+- 현재 python 2.7 버전인데 3.7로 버전업하기
+- Pipenv로 가상환경을 변경하기
+- Bootstrap4 배우기
+
+
 # 출처
 
-This image is a boilerplate for any Flask application,  pages are served by uwsgi and Nginx.
-
-On Docker host run: docker run -d -p 80:80 p0bailey/docker-flask
-
-On Docker machine run: docker run -d -p 80:80 p0bailey/docker-flask
-
-Docker compose: docker-compose up -d
-
+This image is a boilerplate for any Flask application, pages are served by uwsgi and Nginx.
 Source code: https://github.com/p0bailey/docker-flask
-
 DockerHub: https://hub.docker.com/r/p0bailey/docker-flask/
 
-# 참고할 것
-
-1. python 2.7 버전기준
-- 라즈베리파이에 사용하기 위함
