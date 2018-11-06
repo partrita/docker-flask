@@ -5,16 +5,18 @@ from forms import TestForm, ConversionForm, BufferForm
 from calculator import test, protein_mole, buffer_mass
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '_5#y2L"F4Q8z\n\xec]/'
+app.config['SECRET_KEY'] = '_5#y2L"F4Q8zxec]/'
+
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title='Biohack')
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', title='About')
+
 
 @app.route('/sequencing', methods=['GET', 'POST'])
 def sequencing():
@@ -25,6 +27,7 @@ def sequencing():
     #     return redirect('/index')
     return render_template('cal_sequence.html', title='test', form=form)
 
+
 @app.route('/molar', methods=['GET', 'POST'])
 # def submit():
 #     form = MyForm()
@@ -34,17 +37,18 @@ def sequencing():
 def calculate():
     form = ConversionForm()
     if request.method == 'POST':  # and form.validate():
-    # if form.validate_on_submit():
+        # if form.validate_on_submit():
         mass_unit = float(form.mass_unit.data)
         volume_unit = float(form.volume_unit.data)
         molecular_weight = form.molecular_weight.data
         mass = form.mass.data
         volume = form.volume.data
-        result = protein_mole(mass, molecular_weight, mass_unit)*1000/(volume*volume_unit)
+        result = protein_mole(mass, molecular_weight,
+                              mass_unit)*1000/(volume*volume_unit)
     else:
         result = None
 
-    return render_template('cal_molar.html', form=form, result=result)
+    return render_template('cal_molar.html', form=form, result=result, title='Protein molar calculator')
 
 
 @app.route('/buffer', methods=['GET', 'POST'])
@@ -57,12 +61,11 @@ def make_buffer():
         volume = form.volume.data
         volume_unit = form.volume_unit.data
         result = buffer_mass(molar_concentration,
-        molar_concentration_unit,volume, volume_unit, molecular_weight)
+                             molar_concentration_unit, volume, volume_unit, molecular_weight)
     else:
         result = None
-    
-    return render_template('cal_buffer.html', form=form, result=result)
 
+    return render_template('cal_buffer.html', form=form, result=result, title='Buffer calculator')
 
 
 if __name__ == '__main__':
