@@ -1,26 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2> Buffer calculator : molar concentration</h2>
+<div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Services
+        <small>Subheading</small>
+        </h1>
+        
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Services </li>
+        </ol>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h2> Buffer calculator : molar concentration</h2>
+                This program helps you to convert the weight (weight concentration) in the molar quantity (molar concentration) and
+                vice versa.
+                <form method=post action="">
+                    {{form.csrf_token}}
+                    {{ form.molecular_weight(class="form-group") }} g/L </br>
+                    <div class="form-inline mb-2">
+                        {{( form.molar(class="mr-sm-2") ) }} {{ form.molar_unit(class="mr-sm-2") }} </br>
+                        {{( form.volume(class="mr-sm-2") ) }} {{ form.volume_unit(class="mr-sm-2") }} </br>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    {{ form.submit(class="btn btn-primary") }}
+                    <!-- <input type=submit value=calculate> -->
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+            <h3> Results: </h3>
+                {% if result != None %}
+                {{result}} [mg]
+                {% endif %}
+            </div>
+        </div>
+</div>
 
-This program helps you to convert the weight (weight concentration) in the molar quantity (molar concentration) and
-vice versa. </br>
-
-<form method=post action="">
-    {{form.csrf_token}}
-    {{ form.molecular_weight(class="form-group") }} g/L </br>
-    <div class="form-inline mb-2">
-        {{( form.molar(class="mr-sm-2") ) }} {{ form.molar_unit(class="mr-sm-2") }} </br>
-        {{( form.volume(class="mr-sm-2") ) }} {{ form.volume_unit(class="mr-sm-2") }} </br>
-    </div>
-    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-    {{ form.submit(class="btn btn-primary") }}
-    <!-- <input type=submit value=calculate> -->
-</form>
-
-<h3> Results: </h3>
-
-{% if result != None %}
-{{result}} [mg]
-{% endif %}
 {% endblock %}

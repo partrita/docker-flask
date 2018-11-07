@@ -1,40 +1,58 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>One click Sequencing Check</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mi mauris, tempus in massa sed, rutrum congue
-    libero. Fusce sed mattis velit, vel interdum mauris. Quisque ac mi a sem iaculis bibendum. Mauris in diam ut nisl
-    rutrum luctus. Nunc blandit, lectus sit amet molestie pretium, leo nisl vehicula eros, et mattis felis massa eu
-    lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie nulla. Cras nibh sem, pretium sit
-    amet sagittis commodo, suscipit a lacus. Quisque sollicitudin tincidunt nisi, quis ornare nunc elementum vehicula.
-    Aenean eget mollis erat, sit amet lobortis diam. Donec congue purus libero, hendrerit aliquam diam dapibus ac.
-    Aenean dui orci, ultricies id nisl sed, interdum vehicula est. Etiam cursus sollicitudin lorem non maximus.
-    Vestibulum sodales purus at tellus efficitur efficitur ut sit amet tortor. Vestibulum sed lectus consequat, feugiat
-    sem sit amet, finibus mi.
-</p>
-<form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.query_seq.label() }}<br>
-        {{ form.query_seq(cols="20", rows="1") }}<br>
-        {% for error in form.query_seq.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
-    <p>
-        {{ form.target_seq.label() }}<br>
-        {{ form.target_seq(cols="20", rows="1") }}<br>
-        {% for error in form.target_seq.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-</form>
-<p>
-    Vestibulum quis auctor augue, eget pharetra magna. Nulla in felis a magna bibendum tristique. Proin tincidunt
-    venenatis lectus, semper elementum odio efficitur ut. Duis faucibus commodo interdum. Nam pulvinar rhoncus dapibus.
-    Integer urna nisi, volutpat ut fringilla a, vestibulum ullamcorper felis. Quisque cursus ante ut dolor fringilla,
-    posuere facilisis ligula bibendum. In hac habitasse platea dictumst.
-</p>
+<!-- Page Content -->
+<div class="container">
+<!-- Page Heading/Breadcrumbs -->
+<h1 class="mt-4 mb-3">Services
+<small>Subheading</small>
+</h1>
+
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+    <a href="index.html">Home</a>
+</li>
+<li class="breadcrumb-item active">Services</li>
+</ol>
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <h1>One click Sequencing Check</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mi mauris, tempus in massa sed, rutrum congue
+            libero. Fusce sed mattis velit, vel interdum mauris. Quisque ac mi a sem iaculis bibendum. Mauris in diam ut nisl
+            rutrum luctus. Nunc blandit, lectus sit amet molestie pretium, leo nisl vehicula eros, et mattis felis massa eu
+            lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie nulla. Cras nibh sem, pretium sit
+            amet sagittis commodo, suscipit a lacus. Quisque sollicitudin tincidunt nisi, quis ornare nunc elementum vehicula.
+            Aenean eget mollis erat, sit amet lobortis diam. Donec congue purus libero, hendrerit aliquam diam dapibus ac.
+            Aenean dui orci, ultricies id nisl sed, interdum vehicula est. Etiam cursus sollicitudin lorem non maximus.
+            Vestibulum sodales purus at tellus efficitur efficitur ut sit amet tortor. Vestibulum sed lectus consequat, feugiat
+            sem sit amet, finibus mi.
+        </p>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.query_seq.label() }}<br>
+                {{ form.query_seq(cols="20", rows="1") }}<br>
+                {% for error in form.query_seq.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.target_seq.label() }}<br>
+                {{ form.target_seq(cols="20", rows="1") }}<br>
+                {% for error in form.target_seq.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+        <p>
+        Vestibulum quis auctor augue, eget pharetra magna. Nulla in felis a magna bibendum tristique. Proin tincidunt
+        venenatis lectus, semper elementum odio efficitur ut. Duis faucibus commodo interdum. Nam pulvinar rhoncus dapibus.
+        Integer urna nisi, volutpat ut fringilla a, vestibulum ullamcorper felis. Quisque cursus ante ut dolor fringilla,
+        posuere facilisis ligula bibendum. In hac habitasse platea dictumst.
+        </p>
+        </div>
+    </div>
+</div>
 {% endblock %}
