@@ -17,9 +17,15 @@ def index():
 def about():
     return render_template('about.html', title='About')
 
+
 @app.route('/services')
 def services():
     return render_template('services.html', title='Service of biohack')
+
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
 
 
 @app.route('/sequencing', methods=['GET', 'POST'])
