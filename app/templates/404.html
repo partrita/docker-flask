@@ -6,8 +6,8 @@
 <div class="container">
 
   <!-- Page Heading/Breadcrumbs -->
-  <h1 class="mt-4 mb-3">404
-    <small>Page Not Found</small>
+  <h1 class="mt-4 mb-3">Page Not Found
+    <!-- <small>Page Not Found</small> -->
   </h1>
 
   <ol class="breadcrumb">
@@ -17,13 +17,17 @@
     <li class="breadcrumb-item active">404</li>
   </ol>
 
-  <div class="jumbotron">
-    <h1 class="display-1">404</h1>
-    <p>The page you're looking for could not be found.</p>
-    <p>찾으시는 페이지가 없습니다.</p>
-    <p>
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ url_for('static',filename='img/404_cat.png') }}" class="rounded img-fluid" alt="404_cat">
+    </div>
+    <div class='col-md-6'>
+      <h2>
+        <p>The page you're looking for could not be found.</p>
+        <p>찾으시는 페이지가 존재하지 않습니다.</p>
+      </h2>
+    </div>
   </div>
-  <!-- /.jumbotron -->
 
 </div>
 <!-- /.container -->

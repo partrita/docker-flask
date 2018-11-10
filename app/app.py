@@ -15,17 +15,27 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title='About')
+    return render_template('about.html', title='About biohack')
 
 
-@app.route('/services')
-def services():
-    return render_template('services.html', title='Service of biohack')
+@app.route('/tools')
+def tools():
+    return render_template('tools.html', title='Tools of biohack')
+
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html', title="Taeyoon's portfolio")
+
+
+@app.route('/temp')
+def temp():
+    return render_template('cal_temp.html', title="temp page for test")
 
 
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html'), 404
+    return render_template('404.html', title='404 error'), 404
 
 
 @app.route('/sequencing', methods=['GET', 'POST'])
@@ -70,8 +80,10 @@ def make_buffer():
         molar_concentration_unit = form.molar_unit.data
         volume = form.volume.data
         volume_unit = form.volume_unit.data
-        result = buffer_mass(molar_concentration,
+        result_mg = buffer_mass(molar_concentration,
                              molar_concentration_unit, volume, volume_unit, molecular_weight)
+        result_g = result_mg*1000
+        result = {'g': result_g,'mg': result_mg }
     else:
         result = None
 

@@ -13,6 +13,7 @@ MarkupSafe = "==1.0"
 uWSGI = "==2.0.17.1"
 Werkzeug = "==0.14.1"
 WTForms = "==2.2.1"
+biopython = "*"
 
 [dev-packages]
 

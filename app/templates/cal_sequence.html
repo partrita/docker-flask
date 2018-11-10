@@ -1,69 +1,69 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Page Content -->
 <div class="container">
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Services
-        <small>Subheading</small>
-    </h1>
-
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Services</li>
-    </ol>
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <h1>One click Sequencing Check</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mi mauris, tempus in massa sed,
-                rutrum congue
-                libero. Fusce sed mattis velit, vel interdum mauris. Quisque ac mi a sem iaculis bibendum. Mauris in
-                diam ut nisl
-                rutrum luctus. Nunc blandit, lectus sit amet molestie pretium, leo nisl vehicula eros, et mattis felis
-                massa eu
-                lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie nulla. Cras nibh sem,
-                pretium sit
-                amet sagittis commodo, suscipit a lacus. Quisque sollicitudin tincidunt nisi, quis ornare nunc
-                elementum vehicula.
-                Aenean eget mollis erat, sit amet lobortis diam. Donec congue purus libero, hendrerit aliquam diam
-                dapibus ac.
-                Aenean dui orci, ultricies id nisl sed, interdum vehicula est. Etiam cursus sollicitudin lorem non
-                maximus.
-                Vestibulum sodales purus at tellus efficitur efficitur ut sit amet tortor. Vestibulum sed lectus
-                consequat, feugiat
-                sem sit amet, finibus mi.
-            </p>
-            <form action="" method="post" novalidate>
-                {{ form.hidden_tag() }}
-                <p>
-                    {{ form.query_seq.label() }}<br>
-                    {{ form.query_seq(cols="20", rows="1") }}<br>
-                    {% for error in form.query_seq.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </p>
-                <p>
-                    {{ form.target_seq.label() }}<br>
-                    {{ form.target_seq(cols="20", rows="1") }}<br>
-                    {% for error in form.target_seq.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </p>
-                <p>{{ form.submit() }}</p>
-            </form>
-            <p>
-                Vestibulum quis auctor augue, eget pharetra magna. Nulla in felis a magna bibendum tristique. Proin
-                tincidunt
-                venenatis lectus, semper elementum odio efficitur ut. Duis faucibus commodo interdum. Nam pulvinar
-                rhoncus dapibus.
-                Integer urna nisi, volutpat ut fringilla a, vestibulum ullamcorper felis. Quisque cursus ante ut dolor
-                fringilla,
-                posuere facilisis ligula bibendum. In hac habitasse platea dictumst.
-            </p>
-        </div>
+    <!-- description -->
+    <div class="py-5 text-center">
+        <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h2>Check the sequencing</h2>
+        <p class="lead">이것은 예시 설명 입니다.</p>
     </div>
+    <!-- show_results  -->
+    <div class="col-lg-12">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your Results</span>
+            <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+        </h4>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between">
+                <div>
+                    <h6 class="my-0">Result name</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <strong>Calculated results</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <div>
+                    <h6 class="my-0">Result name</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <strong>Calculated results</strong>
+            </li>
+        </ul>
+    </div>
+    <!-- inputform -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="mb-3">Input section1</h4>
+            <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username">input1</label>
+                    <div class="input-group">
+                        <textarea class="form-control" rows="10" id="comment"></textarea>
+                    </div>
+                    <hr class="mb-4">
+                    <div class="mb-3">
+                        <label for="username">input2</label>
+                        <div class="input-group">
+                            <textarea class="form-control" rows="10" id="comment"></textarea>
+                        </div>
+                    </div>
+                    <h4 class="mb-3">Input section2</h4>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox1">
+                        <label class="custom-control-label" for="checkbox1">Check box1</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox2">
+                        <label class="custom-control-label" for="checkbox2">Check box2</label>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Check the sequencing!</button>
+            </form>
+        </div>
+
+    </div>
+
 </div>
+
 {% endblock %}
