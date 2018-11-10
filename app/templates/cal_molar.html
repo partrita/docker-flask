@@ -10,29 +10,30 @@
         <p class="lead">This program helps you to convert the weight (weight concentration) in the molar quantity
             (molar concentration) </p>
     </div>
+
     <!-- show_results  -->
-    <div class="col-md-4 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your Results</span>
-            <!-- <span class="badge badge-secondary badge-pill">3</span> -->
-        </h4>
-
-        <ul class="list-group mb-3">
-            {% if result != None %}
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    <h6 class="my-0">
-                        {{ result }}
-                    </h6>
-                    <small class="text-muted">mM</small>
-                </div>
-            </li>
-            {% endif %}
-        </ul>
-
-    </div>
-    <!-- input_form -->
     <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your Results</span>
+                <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+            </h4>
+
+            <ul class="list-group mb-3">
+                {% if result != None %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="my-0">
+                            {{ result }}
+                        </h6>
+                        <small class="text-muted">mM</small>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+
+        </div>
+        <!-- input_form -->
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Input section1</h4>
             <form method=post action="">
@@ -41,8 +42,11 @@
                 <div class="mb-3">
                     {{ form.molecular_weight.label }}
                     <label for="userinput1">Molecular weight</label>
-                    <div class="input-group">
-                        {{ form.molecular_weight(class="form-control") }}
+                    <div class="row">
+
+                        <div class="col-md-5 input-group">
+                            {{ form.molecular_weight(class="form-control") }}
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
