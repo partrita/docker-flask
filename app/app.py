@@ -1,8 +1,10 @@
 #!flask/bin/python
 from flask import Flask
 from flask import render_template, request
-from forms import TestForm, ConversionForm, BufferForm
+from forms import AlignmentForm, ConversionForm, BufferForm
 from calculator import test, protein_mole, buffer_mass
+from alignment import Alignment
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '_5#y2L"F4Q8zxec]/'
@@ -38,14 +40,22 @@ def not_found_error(error):
     return render_template('404.html', title='404 error'), 404
 
 
-@app.route('/sequencing', methods=['GET', 'POST'])
-def sequencing():
-    form = TestForm()
-    # if form.validate_on_submit():
+@app.errorhandler(500)
+def internal_server_error(error):
+    app.logger.error('Server Error: %s', (error))
+    return render_template('500.html'), 500
+
+
+@app.route('/alignment', methods=['GET', 'POST'])
+def alignment():
+    form = AlignmentForm()
+    result = None
+    if form.validate_on_submit():
+        result = Alignment(form.query_seq.data, form.query_seq.data)
     #     flask('Login request for user {}, remember_me={}'.format(
     #         form.username.data, form.remember_me.data))
     #     return redirect('/index')
-    return render_template('cal_sequence.html', title='test', form=form)
+    return render_template('seq_alignment.html', title='Sequence alignment', form=form, result=result)
 
 
 @app.route('/molar', methods=['GET', 'POST'])

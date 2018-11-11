@@ -1,18 +1,19 @@
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, StringField, PasswordField, BooleanField, SubmitField, IntegerField, FloatField, SelectField
+from wtforms import TextAreaField, StringField, PasswordField, BooleanField, \
+SubmitField, IntegerField, FloatField, SelectField
 from wtforms.validators import DataRequired, InputRequired
 from wtforms.widgets import TextArea
 
 
-class TestForm(FlaskForm):
-    input_seq = TextAreaField(
-        'input_seq', widget=TextArea(), validators=[DataRequired()])
-    query_seq = TextAreaField(
-        'query_sequence', widget=TextArea(), validators=[DataRequired()])
+class AlignmentForm(FlaskForm):
+    # input_seq = TextAreaField(
+    #     'input_seq', widget=TextArea(), validators=[DataRequired()])
     target_seq = TextAreaField(
-        'target_sequence', widget=TextArea(), validators=[DataRequired()])
-    # password = PasswordField('Password', validators=[DataRequired()])
-    # remember_me = BooleanField('Remember Me')
+        'target_sequence', widget=TextArea(), validators=[DataRequired()],
+        render_kw={"rows": 10, "cols": 7})
+    query_seq = TextAreaField(
+        'query_sequence', widget=TextArea(), validators=[DataRequired()],
+         render_kw={"rows": 10, "cols": 7})
     submit = SubmitField('Alginments!')
 
 
@@ -36,8 +37,10 @@ class MyForm(FlaskForm):
 class BufferForm(FlaskForm):
     molecular_weight = FloatField(validators=[InputRequired()])
     molar = FloatField(validators=[InputRequired()])
-    molar_unit = SelectField(choices=[(1.0, 'M'), (0.001, 'mM'), (0.000001, 'uM')], validators=[DataRequired()])
+    molar_unit = SelectField(choices=[(1.0, 'M'), (0.001, 'mM'), (0.000001, 'uM')],
+    validators=[DataRequired()])
     volume = FloatField(validators=[InputRequired()])
-    volume_unit = SelectField(choices=[(1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')], validators=[DataRequired()])
+    volume_unit = SelectField(choices=[(1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')], 
+    validators=[DataRequired()])
     submit = SubmitField('Submit!')
 
