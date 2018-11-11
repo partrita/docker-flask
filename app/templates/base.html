@@ -53,11 +53,7 @@
       <a href="/" class="navbar-brand d-flex align-items-center">
         <!-- logo is here -->
         <img src="{{ url_for('static', filename='img/test-tube.svg')}}" width="20" height="20">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-          <circle cx="12" cy="13" r="4"></circle>
-        </svg> -->
+
         <strong>Biohack</strong>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
@@ -66,63 +62,6 @@
       </button>
     </div>
   </div>
-  <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">Biohacker</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://partrita.github.io">Blog</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Portfolio
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Blog
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                      <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                      <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                      <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Other Pages
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                      <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                      <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                      <a class="dropdown-item" href="faq.html">FAQ</a>
-                      <a class="dropdown-item" href="404.html">404</a>
-                      <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-                    </div>
-                  </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <!-- content -->
   {% block content %}
@@ -136,21 +75,21 @@
       <p class="float-right">
         <a href="#">Back to top</a>
       </p>
-      <p> Copyright &copy; Taeyoon Kim 2018,</p>
-      <p>but please feel free to customize it for yourself!</p>
+      <p>Copyright &copy; Biohack 2018</p>
+      <p>but please feel free to customize it!</p>
       <!-- <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
           started guide</a>.</p> -->
     </div>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <!-- Bootstrap core JavaScript
-          ================================================== -->
+
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/holder.min.js') }}"></script>
+
   <!-- // jQuery first, then Popper.js, then Bootstrap JS
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
          crossorigin="anonymous"></script>
@@ -158,6 +97,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script> -->
+
 </body>
 
 

@@ -1,4 +1,6 @@
 #!flask/bin/python
+# -*- coding: utf-8 -*-
+
 from flask import Flask
 from flask import render_template, request
 from forms import AlignmentForm, ConversionForm, BufferForm
@@ -51,6 +53,7 @@ def alignment():
     form = AlignmentForm()
     result = None
     if form.validate_on_submit():
+        # result = form.query_seq.data
         result = Alignment(form.query_seq.data, form.query_seq.data)
     #     flask('Login request for user {}, remember_me={}'.format(
     #         form.username.data, form.remember_me.data))

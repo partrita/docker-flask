@@ -5,7 +5,7 @@
     <!-- description -->
     <div class="py-5 text-center">
         <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-        <h2>Check the sequencing</h2>
+        <h2>All in one sequence alginment</h2>
         <p class="lead">이것은 예시 설명 입니다.</p>
     </div>
 
@@ -22,72 +22,51 @@
                     <h6 class="my-0">Result name</h6>
                     <small class="text-muted">Brief description</small>
                 </div>
-
             </li>
             <li class="list-group-item d-flex justify-content-between">
                 <div>
-                    <pre> Calculated results
-                    </pre>
+                    <h6 class="my-0">for debuging</h6>
+                    <pre class="text-muted"> {{result}}</pre>
                 </div>
             </li>
+            {% for item in result %}
             <li class="list-group-item d-flex justify-content-between">
                 <div>
-                    <h6 class="my-0">Result name</h6>
-                    <small class="text-muted">Brief description</small>
-                </div>
-
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    <!-- <pre> {{ results}} </pre> -->
-                    <table>
-                        {% for key, value in result.iteritems() %}
-                        <tr>
-                            <th> {{ key }} </th>
-                            <td> {{ value }} </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
+                    <p> {{ item }} </p>
                 </div>
             </li>
+            {% endfor %}
             {% endif %}
         </ul>
     </div>
     <!-- inputform -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h4 class="mb-3">Input section1</h4>
-            <form method=post action="">
-                {{form.csrf_token}}
-                <div class="mb-3">
-                    <!-- {{ form.target_seq.label }} -->
-                    <label for="input1">원본 DNA 서열</label>
-                    <div class="input-group">
-                        {{ form.target_seq(class="form-control") }}
-                    </div>
+    <div class="col-lg-12">
+        <h4 class="mb-3">Input section1</h4>
+        <form method=post action="">
+            {{form.csrf_token}}
+            <div class="mb-3">
+                <!-- {{ form.target_seq.label }} -->
+                <label for="input1">원본 DNA 서열</label>
+                <div class="input-group">
+                    {{ form.target_seq(class="form-control") }}
                 </div>
-                <div class="mb-3">
-                    <!-- {{ form.query_seq.label }} -->
-                    <label for="input2">시퀀싱 DNA 서열</label>
-                    <div class="input-group">
-                        {{ form.query_seq(class="form-control") }}
-                    </div>
+            </div>
+            <div class="mb-3">
+                <!-- {{ form.query_seq.label }} -->
+                <label for="input2">시퀀싱 DNA 서열</label>
+                <div class="input-group">
+                    {{ form.query_seq(class="form-control") }}
                 </div>
-                <hr class="mb-4">
-                <h4 class="mb-3">Input section2</h4>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="checkbox1">
-                    <label class="custom-control-label" for="checkbox1">Check box1</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="checkbox2">
-                    <label class="custom-control-label" for="checkbox2">Check box2</label>
-                </div>
-                <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Sequence alginment!</button>
-            </form>
-        </div>
-
+            </div>
+            <hr class="mb-4">
+            <h4 class="mb-3">Input section2</h4>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="checkbox1">
+                <label class="custom-control-label" for="checkbox1">Check box1</label>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Alginment!</button>
+        </form>
     </div>
 
 </div>

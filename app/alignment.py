@@ -1,21 +1,27 @@
 from Bio import SeqIO, pairwise2
 from Bio.Seq import Seq
 from Bio.Alphabet import IUPAC
+from Bio.SeqRecord import SeqRecord
 
-
-my_seq = Seq("AGTACACTGGT", IUPAC.unambiguous_dna)
-my_seq.id = 'test'
 
 def read_fasta(fp):
     name, seq = None, []
-    for line in fp:
-        line = line.rstrip()
+    for line in fp.split():
+        # line = line.rstrip()
         if line.startswith(">"):
             if name: yield (name, ''.join(seq))
-            name, seq = line, []
+            name, seq = line[1:], []
         else:
             seq.append(line)
     if name: yield (name, ''.join(seq))
+
+
+def mk_seqrecord(x):
+    result = []
+    for name, seq in x:
+        result.append(SeqRecord(Seq(seq), id=name))
+    return result
+
 
 # with open('f.fasta') as fp:
 #     for name, seq in read_fasta(fp):
@@ -25,16 +31,41 @@ def Alignment(target_seq, query_seq):
     '''
     Read template Fasta file: should be ATG to TAG
     '''
-    target_DNA = SeqIO.read(target_seq,'fasta')
-    target_Protein = seq_DNA.translate()
+    name, seq = None, []
+    for line in target_seq.split():
+        if line.startswith(">"):
+            name, seq = line[1:], []
+        else:
+            seq.append(line)
+    
+    target_DNA = SeqRecord(Seq(''.join(seq)), id = name)
+    target_Protein = target_DNA.translate()
 
     # empty dict
-    result = {}
+    DNA_result = {}
+    PRO_result = {}
+    result = []
 
-    for seq_record in SeqIO.parse(query_seq, 'fasta'):
+    # DNA alginment
+    for seq_record in mk_seqrecord(read_fasta(query_seq)):
         alignments = pairwise2.align.localms(seq_record.seq, target_DNA.seq, 2, -3, -2, -2)
-        result[seq_record.id] = pairwise2.format_alignment(*alignments[0])
-    
+        DNA_result[seq_record.id] = pairwise2.format_alignment(*alignments[0])
+        # Protein seq
+        # forward_1 = seq_record.seq[0::].translate()
+        # forward_2 = seq_record.seq[1::].translate()
+        # forward_3 = seq_record.seq[2::].translate()
+        # reverse_1 = seq_record.seq[:0:-1].translate() # reverse frame
+        # reverse_2 = seq_record.seq[:1:-1].translate()
+        # reverse_3 = seq_record.seq[:2:-1].translate()
+        # make list for loop
+            
+        # protein_seq = [forward_1, forward_2, forward_3, reverse_1, reverse_2, reverse_3]
+        # # Prtoein sequence alginments
+        # for i in protein_seq:
+        #     # print frame name?
+        #     alignments = pairwise2.align.localms(i, target_Protein, 2, -3, -2, -2)
+        #     PRO_result[seq_record.id + '_' + i] = pairwise2.format_alignment(*alignments[0])
+    result.append(DNA_result)
     return result
 
 #    # simple file write
