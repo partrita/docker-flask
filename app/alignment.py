@@ -47,15 +47,19 @@ def Alignment(target_seq, query_seq):
     result = []
    # simple file write
     with open('static/alignment_result.txt','w') as f:
-        f.write('#### Life is short, use python. \n')
+        f.write('#### Life_is_Short,Use_Python. \n')
         f.write('\n') # add blank line
         # Simple FASTA parsing
         for seq_record in mk_seqrecord(read_fasta(query_seq)):
             # print('#### DNA alignments of {} ####'.format(seq_record.id))
-            f.write('#### DNA sequence alignments : {} ####\n'.format(seq_record.id))
+            f.write('#### {} foward DNA sequence alignments ####\n'.format(seq_record.id))
             alignments = pairwise2.align.localms(seq_record.seq, target_DNA.seq, 2, -3, -2, -2)
             # print(pairwise2.format_alignment(*alignments[0]))
             f.write(pairwise2.format_alignment(*alignments[0]))
+            f.write('#### {} reverse DNA sequence alignments ####\n'.format(seq_record.id))
+            rev_seq = seq_record.reverse_complement()
+            rev_alignments = pairwise2.align.localms(rev_seq.seq, target_DNA.seq, 2, -3, -2, -2)
+            f.write(pairwise2.format_alignment(*rev_alignments[0]))
             f.write('\n') # add blank line
             # print('#### Protein alignments of {} ####'.format(seq_record.id))
             f.write('#### Protein sequence alignments :  {} ####\n'.format(seq_record.id))
