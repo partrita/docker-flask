@@ -1,0 +1,35 @@
+#### Life is short, use python. 
+
+#### DNA sequence alignments : TEST2 ####
+CCCCCCCCCCCCCc
+||||||||||||||
+CCCCCCCCCCCCCc
+  Score=28
+
+#### Protein sequence alignments :  TEST2 ####
+
+PPPP
+||||
+PPPP
+  Score=8
+PPPP
+||||
+PPPP
+  Score=8
+PPPP
+||||
+PPPP
+  Score=8
+PPPP
+||||
+PPPP
+  Score=8
+PPPP
+||||
+PPPP
+  Score=8
+-PPP
+ |||
+PPPP
+  Score=6
+

@@ -5,8 +5,8 @@
     <!-- description -->
     <div class="py-5 text-center">
         <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-        <h2>All in one sequence alginment</h2>
-        <p class="lead">이것은 예시 설명 입니다.</p>
+        <h2>All in one sequence alignment</h2>
+        <p class="lead"> DNA 시퀀스를 넣으면 알아서 해줌</p>
     </div>
 
     <!-- show_results  -->
@@ -19,53 +19,46 @@
             {% if result != None %}
             <li class="list-group-item d-flex justify-content-between">
                 <div>
-                    <h6 class="my-0">Result name</h6>
-                    <small class="text-muted">Brief description</small>
+                    <h6 class="my-0">
+                        <a href="\getfile">
+                            {{ result }}
+                        </a>
+                    </h6>
+                    <small class="text-muted">
+                        파일은 텍스트로 구성되어 있습니다. 다시 분석하시려면 페이지 세로고침을 하세요.
+                    </small>
                 </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    <h6 class="my-0">for debuging</h6>
-                    <pre class="text-muted"> {{result}}</pre>
-                </div>
-            </li>
-            {% for item in result %}
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    <p> {{ item }} </p>
-                </div>
-            </li>
-            {% endfor %}
             {% endif %}
         </ul>
     </div>
     <!-- inputform -->
     <div class="col-lg-12">
-        <h4 class="mb-3">Input section1</h4>
+        <h4 class="mb-3">User Input</h4>
         <form method=post action="">
             {{form.csrf_token}}
             <div class="mb-3">
                 <!-- {{ form.target_seq.label }} -->
-                <label for="input1">원본 DNA 서열</label>
+                <label for="input1">목표 DNA 서열</label>
                 <div class="input-group">
                     {{ form.target_seq(class="form-control") }}
                 </div>
             </div>
             <div class="mb-3">
                 <!-- {{ form.query_seq.label }} -->
-                <label for="input2">시퀀싱 DNA 서열</label>
+                <label for="input2">시퀀싱 결과: DNA 서열</label>
                 <div class="input-group">
                     {{ form.query_seq(class="form-control") }}
                 </div>
             </div>
             <hr class="mb-4">
-            <h4 class="mb-3">Input section2</h4>
+            <!-- <h4 class="mb-3">Input section2</h4>
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="checkbox1">
                 <label class="custom-control-label" for="checkbox1">Check box1</label>
             </div>
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Alginment!</button>
+            <hr class="mb-4"> -->
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Alignment!</button>
         </form>
     </div>
 

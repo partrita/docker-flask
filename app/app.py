@@ -1,8 +1,7 @@
 #!flask/bin/python
 # -*- coding: utf-8 -*-
 
-from flask import Flask
-from flask import render_template, request
+from flask import Flask, render_template, request, send_file
 from forms import AlignmentForm, ConversionForm, BufferForm
 from calculator import test, protein_mole, buffer_mass
 from alignment import Alignment
@@ -54,12 +53,19 @@ def alignment():
     result = None
     if form.validate_on_submit():
         # result = form.query_seq.data
-        result = Alignment(form.query_seq.data, form.query_seq.data)
+        Alignment(form.query_seq.data, form.query_seq.data)
+        result = 'Download'
     #     flask('Login request for user {}, remember_me={}'.format(
     #         form.username.data, form.remember_me.data))
     #     return redirect('/index')
     return render_template('seq_alignment.html', title='Sequence alignment', form=form, result=result)
 
+@app.route('/getfile') # this is a job for GET, not POST
+def getfile():
+    return send_file('static/alignment_result.txt',
+                     mimetype='text/*',
+                     attachment_filename='alignment_result.txt',
+                     as_attachment=True)
 
 @app.route('/molar', methods=['GET', 'POST'])
 # def submit():
