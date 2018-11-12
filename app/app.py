@@ -95,7 +95,7 @@ def make_buffer():
         volume_unit = form.volume_unit.data
         result_mg = buffer_mass(molar_concentration,
                              molar_concentration_unit, volume, volume_unit, molecular_weight)
-        result_g = result_mg*1000
+        result_g = result_mg/1000
         result = {'g': result_g,'mg': result_mg }
     else:
         result = None
