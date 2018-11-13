@@ -7,9 +7,10 @@
     <!-- description -->
     <div class="py-5 text-center">
         <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-        <h2>Buffer calculator : molar concentration</h2>
-        <p class="lead">This program helps you to convert the weight (weight concentration) in the molar quantity
-            (molar concentration) </p>
+        <h2>버퍼 몰 농도 계산기</h2>
+        <p class="lead">
+            Stock solution을 만들기 위한 몰 농도 계산기 
+            </p>
     </div>
     <!-- show_results  -->
     <div class="row">
@@ -59,7 +60,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="userinput2">input2</label>
+                    <label for="userinput2">원하는 버퍼의 몰 농도</label>
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             {{ form.molar(class="form-control") }}
@@ -69,7 +70,7 @@
                         </div>
                     </div>
 
-                    <label for="userinput3">input3</label>
+                    <label for="userinput3">원하는 버퍼의 부피</label>
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             {{ form.volume(class="form-control") }}
