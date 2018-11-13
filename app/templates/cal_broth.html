@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <!-- description -->
+    <div class="py-5 text-center">
+        <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h2>Template form</h2>
+        <p class="lead">아래는 예시입니다. Below is an example form built entirely with Bootstrap's form controls. Each
+            required form
+            group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+    <div class="row">
+        <!-- show_results  -->
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your Results</span>
+                <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+            </h4>
+            
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="my-0">Result name</h6>
+                        <small class="text-muted">Brief description</small>
+                    </div>
+                    <strong>Calculated results</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="my-0">Result name</h6>
+                        <small class="text-muted">Brief description</small>
+                    </div>
+                    <strong>Calculated results</strong>
+                </li>
+            </ul>
+        </div>
+        <!-- inputform -->
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Input section1</h4>
+            <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username">필요한 배양액의 양(ml)</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="username" placeholder="Username" required>
+                        <div class="invalid-feedback" style="width: 100%;">
+                            Your input is required.
+                        </div>
+                    </div>
+                </div>
+               
+                <hr class="mb-4">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="state">dropdown1</label>
+                        <select class="custom-select d-block w-100" id="state" required="">
+                            <option value="">Choose...</option>
+                            <option>LB broth</option>
+                            <option>TB broth</option>
+                            <option>SOB broth</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Calculate!</button>
+            </form>
+        </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}

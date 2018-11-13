@@ -25,17 +25,21 @@
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
                         <h6 class="my-0">
-                            {{ result['g'] }}
+                            필요한 시약의 양(g)
                         </h6>
                         <small class="text-muted">g</small>
+                        <strong>{{ result['g'] }}</strong>
                     </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
                         <h6 class="my-0">
-                            {{ result['mg'] }}
+                            필요한 시약의 양(mg)
                         </h6>
                         <small class="text-muted">mg</small>
+                        <strong>
+                            {{ result['mg'] }}
+                        </strong>
                     </div>
                 </li>
                 {% endif %}

@@ -108,6 +108,27 @@ def make_buffer():
 
     return render_template('cal_buffer.html', form=form, result=result, title='Buffer calculator')
 
+@app.route('/broth', methods=['GET', 'POST'])
+def make_broth():
+    # form = BufferForm()
+    # if request.method == 'POST':
+    #     molecular_weight = form.molecular_weight.data
+    #     molar_concentration = form.molar.data
+    #     molar_concentration_unit = form.molar_unit.data
+    #     volume = form.volume.data
+    #     volume_unit = form.volume_unit.data
+    #     result_mg = buffer_mass(molar_concentration,
+    #                          molar_concentration_unit, volume, volume_unit, molecular_weight)
+    #     result_g = result_mg/1000
+    #     result = {'g': result_g,'mg': result_mg }
+    # else:
+    #     result = None
+
+    return render_template('cal_broth.html', form=form, result=result, title='Broth calculator')
+
+
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
