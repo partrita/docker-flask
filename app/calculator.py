@@ -42,3 +42,17 @@ def buffer_mass(Molar, Molar_unit, Vol, Vol_unit, Mw):
     M = float(Molar)*float(Molar_unit)
     V = float(Vol)*float(Vol_unit)
     return (M*V)/Mw
+
+def broth_mehod(broth_type,volume):
+    '''
+    several broth type and just multiply volume
+    '''
+    dict_LB = {'NaCl':10, 'Tryptone':10, 'Yeast extract':5}
+    dict_SB = {'NaCl':5, 'Tryptone':35, 'Yeast extract':20}
+    dict_SOB = {'NaCl':5, 'Tryptone':20, 'Yeast extract':5, 'MgSO4':0.5}
+    my_dict = {'ingredient1':100, 'ingredient2':10, 'ingredient3':1}
+
+    # code the selection methods
+    for i in my_dict:
+        my_dict[key] = my_dict[key]*volume
+    return my_dict
