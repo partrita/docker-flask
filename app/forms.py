@@ -6,8 +6,6 @@ from wtforms.widgets import TextArea
 
 
 class AlignmentForm(FlaskForm):
-    # input_seq = TextAreaField(
-    #     'input_seq', widget=TextArea(), validators=[DataRequired()])
     target_seq = TextAreaField(
         'target_sequence', widget=TextArea(), validators=[DataRequired()],
         render_kw={"rows": 10, "cols": 7})
@@ -30,10 +28,6 @@ class ConversionForm(FlaskForm):
     submit = SubmitField('Submit!')
 
 
-class MyForm(FlaskForm):
-    name = StringField('name', validators=[DataRequired()])
-
-
 class BufferForm(FlaskForm):
     molecular_weight = FloatField(validators=[InputRequired()])
     molar = FloatField(validators=[InputRequired()])
@@ -44,3 +38,13 @@ class BufferForm(FlaskForm):
     validators=[DataRequired()])
     submit = SubmitField('Submit!')
 
+
+class BrothForm(FlaskForm):
+    volume = StringField('name', validators=[DataRequired()])
+    volume_unit = SelectField(choices=[
+        (1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')],
+        validators=[DataRequired()])
+    broth_type = SelectField(choices=[
+        (1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')],
+        validators=[DataRequired()])
+    
