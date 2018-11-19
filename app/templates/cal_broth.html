@@ -5,11 +5,12 @@
 <div class="container">
     <!-- description -->
     <div class="py-5 text-center">
-        <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-        <h2>Template form</h2>
-        <p class="lead">아래는 예시입니다. Below is an example form built entirely with Bootstrap's form controls. Each
-            required form
-            group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/calculator.png')}}" alt="" width="72"
+            height="72">
+        <h2>배양액 계산기</h2>
+        <p class="lead">
+            만들고자 하는 배양액의 양을 입력하면 조성을 계산해줍니다.
+        </p>
     </div>
     <div class="row">
         <!-- show_results  -->
@@ -18,58 +19,55 @@
                 <span class="text-muted">Your Results</span>
                 <!-- <span class="badge badge-secondary badge-pill">3</span> -->
             </h4>
-            
+
             <ul class="list-group mb-3">
+                {% if result != None %}
+                {% for key, value in result.iteritems() %}
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
-                        <h6 class="my-0">Result name</h6>
-                        <small class="text-muted">Brief description</small>
+                        <h6 class="my-0">
+                            {{ key|e }}
+                        </h6>
+                        <strong>
+                            {{ value|e }}
+                        </strong>
+                        <small class="text-muted">g</small>
                     </div>
-                    <strong>Calculated results</strong>
                 </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>
-                        <h6 class="my-0">Result name</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <strong>Calculated results</strong>
-                </li>
+                {% endfor %}
+                {% endif %}
             </ul>
         </div>
         <!-- inputform -->
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Input section1</h4>
-            <form class="needs-validation" novalidate>
+            <h4 class="mb-3">Input section</h4>
+            <form method=post action="">
+                {{form.csrf_token}}
                 <div class="mb-3">
-                    <label for="username">필요한 배양액의 양(ml)</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="username" placeholder="Username" required>
-                        <div class="invalid-feedback" style="width: 100%;">
-                            Your input is required.
+                    <label>필요한 배양액의 양</label>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            {{ form.volume(class="form-control") }}
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            {{ form.volume_unit(class="custom-select d-block w-100") }}
                         </div>
                     </div>
                 </div>
-               
-                <hr class="mb-4">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label for="state">dropdown1</label>
-                        <select class="custom-select d-block w-100" id="state" required="">
-                            <option value="">Choose...</option>
-                            <option>LB broth</option>
-                            <option>TB broth</option>
-                            <option>SOB broth</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please provide a valid state.
+                <div class="mb-3">
+                    <label>배양액 종류</label>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            {{ form.broth_type(class="custom-select d-block w-100") }}
                         </div>
                     </div>
                 </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Calculate!</button>
+                {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
+                <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Calculate!</button> -->
             </form>
         </div>
-        
+
     </div>
 
 </div>

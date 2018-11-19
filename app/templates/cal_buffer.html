@@ -6,11 +6,12 @@
 <div class="container">
     <!-- description -->
     <div class="py-5 text-center">
-        <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/calculator.png')}}" alt="" width="72"
+            height="72">
         <h2>버퍼 몰 농도 계산기</h2>
         <p class="lead">
-            Stock solution을 만들기 위한 몰 농도 계산기 
-            </p>
+            Stock solution을 만들기 위한 몰 농도 계산기
+        </p>
     </div>
     <!-- show_results  -->
     <div class="row">
@@ -55,7 +56,7 @@
 
                 <div class="mb-3">
                     {{ form.molecular_weight.label }}
-                    <label for="userinput1">Molecular weight</label>
+                    <!-- <label for="userinput1">Molecular weight</label> -->
                     <div class="row">
 
                         <div class="col-md-5 input-group">

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, request, send_file
-from forms import AlignmentForm, ConversionForm, BufferForm
-from calculator import test, protein_mole, buffer_mass
+from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm
+from calculator import test, protein_mole, buffer_mass, broth_mehod
 from alignment import Alignment
 
 
@@ -110,20 +110,20 @@ def make_buffer():
 
 @app.route('/broth', methods=['GET', 'POST'])
 def make_broth():
-    # form = BufferForm()
-    # if request.method == 'POST':
-    #     molecular_weight = form.molecular_weight.data
-    #     molar_concentration = form.molar.data
-    #     molar_concentration_unit = form.molar_unit.data
-    #     volume = form.volume.data
-    #     volume_unit = form.volume_unit.data
-    #     result_mg = buffer_mass(molar_concentration,
-    #                          molar_concentration_unit, volume, volume_unit, molecular_weight)
+    form = BrothForm()
+    result = None
+    if request.method == 'POST':
+    # if form.validate_on_submit():
+        broth_type = int(form.broth_type.data)
+        volume = float(form.volume.data)
+        volume_unit = float(form.volume_unit.data)
+        result = broth_mehod(broth_type, volume*volume_unit)
+        # print result
+
     #     result_g = result_mg/1000
     #     result = {'g': result_g,'mg': result_mg }
     # else:
     #     result = None
-
     return render_template('cal_broth.html', form=form, result=result, title='Broth calculator')
 
 

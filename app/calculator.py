@@ -51,8 +51,14 @@ def broth_mehod(broth_type,volume):
     dict_SB = {'NaCl':5, 'Tryptone':35, 'Yeast extract':20}
     dict_SOB = {'NaCl':5, 'Tryptone':20, 'Yeast extract':5, 'MgSO4':0.5}
     my_dict = {'ingredient1':100, 'ingredient2':10, 'ingredient3':1}
+    if broth_type == 1:
+        my_dict = dict_LB
+    elif broth_type == 2:
+        my_dict = dict_SB
+    elif broth_mehod == 3:
+        my_dict = dict_SOB
 
     # code the selection methods
-    for i in my_dict:
+    for key in my_dict:
         my_dict[key] = my_dict[key]*volume
     return my_dict

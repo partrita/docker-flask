@@ -42,9 +42,10 @@ class BufferForm(FlaskForm):
 class BrothForm(FlaskForm):
     volume = StringField('name', validators=[DataRequired()])
     volume_unit = SelectField(choices=[
-        (1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')],
+        (1.0, 'L'), (0.001, 'ml')],
         validators=[DataRequired()])
     broth_type = SelectField(choices=[
-        (1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')],
+        (1, 'LB broth'), (2, 'SB broth'), (3, 'SOB broth')],
         validators=[DataRequired()])
+    submit = SubmitField('Calculate!')
     
