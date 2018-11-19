@@ -14,7 +14,7 @@ COPY app /var/www/app
 COPY app/Pipfile .
 COPY app/Pipfile.lock .
 # copy over our requirements.txt file
-COPY requirements.txt /tmp/
+COPY app/requirements.txt /tmp/
 
 RUN mkdir -p /var/log/nginx/app /var/log/uwsgi/app /var/log/supervisor \
     && rm /etc/nginx/sites-enabled/default \
