@@ -21,7 +21,7 @@ RUN mkdir -p /var/log/nginx/app /var/log/uwsgi/app /var/log/supervisor \
     && ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.conf \
     && echo "daemon off;" >> /etc/nginx/nginx.conf \
     # upgrade pip and install required python packages
-    && pip install -U pip \
+    # && pip install -U pip \
     && pip install -r /tmp/requirements.txt \
     # &&  pip install pipenv \
     # &&  pipenv install --system \
