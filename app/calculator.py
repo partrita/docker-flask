@@ -55,7 +55,7 @@ def broth_mehod(broth_type,volume):
         my_dict = dict_LB
     elif broth_type == 2:
         my_dict = dict_SB
-    elif broth_mehod == 3:
+    elif broth_type == 3:
         my_dict = dict_SOB
 
     # code the selection methods
