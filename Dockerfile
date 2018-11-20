@@ -23,6 +23,7 @@ RUN mkdir -p /var/log/nginx/app /var/log/uwsgi/app /var/log/supervisor \
     # upgrade pip and install required python packages
     # && pip install -U pip \
     && pip install -r /tmp/requirements.txt \
+    # Due to pipenv bug
     # &&  pip install pipenv \
     # &&  pipenv install --system \
     && chown -R www-data:www-data /var/www/app \

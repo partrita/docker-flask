@@ -49,4 +49,12 @@ class BrothForm(FlaskForm):
          (5, '2xYT broth'), (6, '2xYT-GA broth')],
         validators=[DataRequired()])
     submit = SubmitField('Calculate!')
-    
+
+class OligoForm(FlaskForm):
+    target_seq = TextAreaField(
+        'target_sequence', widget=TextArea(), validators=[DataRequired()],
+        render_kw={"rows": 2, "cols": 7})
+    query_seq = TextAreaField(
+        'query_sequence', widget=TextArea(), validators=[DataRequired()],
+         render_kw={"rows": 2, "cols": 7})
+    submit = SubmitField('Calculate!')

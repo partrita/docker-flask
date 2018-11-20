@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, request, send_file
-from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm
+from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm, OligoForm
 from calculator import test, protein_mole, buffer_mass, broth_mehod
 from alignment import Alignment
 
@@ -53,7 +53,7 @@ def alignment():
     result = None
     if form.validate_on_submit():
         # result = form.query_seq.data
-        Alignment(form.query_seq.data, form.query_seq.data)
+        Alignment(form.target_seq.data, form.query_seq.data)
         result = 'Download'
     #     flask('Login request for user {}, remember_me={}'.format(
     #         form.username.data, form.remember_me.data))
@@ -119,15 +119,17 @@ def make_broth():
         volume_unit = float(form.volume_unit.data)
         result = broth_mehod(broth_type, volume*volume_unit)
         # print result
-
-    #     result_g = result_mg/1000
-    #     result = {'g': result_g,'mg': result_mg }
-    # else:
-    #     result = None
     return render_template('cal_broth.html', form=form, result=result, title='Broth calculator')
 
 
-
+@app.route('/oligo', methods=['GET', 'POST'])
+def oligo():
+    form = OligoForm()
+    result = None
+    if form.validate_on_submit():
+        oligo = form.query_seq.data
+        result = 'Test result'
+    return render_template('cal_oligo.html', title='Oligo calculator', form=form, result=result)
 
 
 if __name__ == '__main__':
