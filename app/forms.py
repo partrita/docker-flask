@@ -45,7 +45,8 @@ class BrothForm(FlaskForm):
         (1.0, 'L'), (0.001, 'ml')],
         validators=[DataRequired()])
     broth_type = SelectField(choices=[
-        (1, 'LB broth'), (2, 'SB broth'), (3, 'SOB broth')],
+        (1, 'LB broth'), (2, 'LB Agar'), (3, 'SB broth'), (4, 'SOB broth'),
+         (5, '2xYT broth'), (6, '2xYT-GA broth')],
         validators=[DataRequired()])
     submit = SubmitField('Calculate!')
     
