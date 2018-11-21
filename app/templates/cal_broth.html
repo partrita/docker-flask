@@ -22,6 +22,7 @@
 
             <ul class="list-group mb-3">
                 {% if result != None %}
+                <!-- iteritems only works in python2, use item for python3 -->
                 {% for key, value in result.iteritems() %}
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
