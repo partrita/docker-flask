@@ -7,11 +7,21 @@ from wtforms.widgets import TextArea
 
 class AlignmentForm(FlaskForm):
     target_seq = TextAreaField(
-        'target_sequence', widget=TextArea(), validators=[DataRequired()],
-        render_kw={"rows": 10, "cols": 7})
+        'target_sequence',
+        widget=TextArea(),
+        validators=[DataRequired()],
+        render_kw={
+            "rows": 10,
+            "cols": 7
+        })
     query_seq = TextAreaField(
-        'query_sequence', widget=TextArea(), validators=[DataRequired()],
-         render_kw={"rows": 10, "cols": 7})
+        'query_sequence',
+        widget=TextArea(),
+        validators=[DataRequired()],
+        render_kw={
+            "rows": 10,
+            "cols": 7
+        })
     submit = SubmitField('Alginments!')
 
 
@@ -31,30 +41,42 @@ class ConversionForm(FlaskForm):
 class BufferForm(FlaskForm):
     molecular_weight = FloatField(validators=[InputRequired()])
     molar = FloatField(validators=[InputRequired()])
-    molar_unit = SelectField(choices=[(1.0, 'M'), (0.001, 'mM'), (0.000001, 'uM')],
-    validators=[DataRequired()])
+    molar_unit = SelectField(
+        choices=[(1.0, 'M'), (0.001, 'mM'), (0.000001, 'uM')],
+        validators=[DataRequired()])
     volume = FloatField(validators=[InputRequired()])
-    volume_unit = SelectField(choices=[(1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')], 
-    validators=[DataRequired()])
+    volume_unit = SelectField(
+        choices=[(1000.0, 'L'), (1.0, 'ml'), (0.001, 'ul')],
+        validators=[DataRequired()])
     submit = SubmitField('Submit!')
 
 
 class BrothForm(FlaskForm):
     volume = StringField('name', validators=[DataRequired()])
-    volume_unit = SelectField(choices=[
-        (1.0, 'L'), (0.001, 'ml')],
-        validators=[DataRequired()])
-    broth_type = SelectField(choices=[
-        (1, 'LB broth'), (2, 'LB Agar'), (3, 'SB broth'), (4, 'SOB broth'),
-         (5, '2xYT broth'), (6, '2xYT-GA broth')],
+    volume_unit = SelectField(
+        choices=[(1.0, 'L'), (0.001, 'ml')], validators=[DataRequired()])
+    broth_type = SelectField(
+        choices=[(1, 'LB broth'), (2, 'LB Agar'), (3, 'SB broth'),
+                 (4, 'SOB broth'), (5, '2xYT broth'), (6, '2xYT-GA broth')],
         validators=[DataRequired()])
     submit = SubmitField('Calculate!')
 
+
 class OligoForm(FlaskForm):
     target_seq = TextAreaField(
-        'target_sequence', widget=TextArea(), validators=[DataRequired()],
-        render_kw={"rows": 2, "cols": 7})
+        'target_sequence',
+        widget=TextArea(),
+        validators=[DataRequired()],
+        render_kw={
+            "rows": 2,
+            "cols": 7
+        })
     query_seq = TextAreaField(
-        'query_sequence', widget=TextArea(), validators=[DataRequired()],
-         render_kw={"rows": 2, "cols": 7})
+        'query_sequence',
+        widget=TextArea(),
+        validators=[DataRequired()],
+        render_kw={
+            "rows": 2,
+            "cols": 7
+        })
     submit = SubmitField('Calculate!')

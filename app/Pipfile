@@ -16,6 +16,8 @@ WTForms = "==2.2.1"
 biopython = "*"
 
 [dev-packages]
+flake8 = "*"
+yapf = "*"
 
 [requires]
 python_version = "2.7"

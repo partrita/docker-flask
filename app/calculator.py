@@ -1,4 +1,7 @@
 import math
+from Bio.Seq import Seq
+from Bio.Alphabet import IUPAC
+from Bio.SeqRecord import SeqRecord
 
 # Calculation formulas.
 
@@ -22,39 +25,51 @@ import math
 def compute(x):
     return math.sin(x)
 
+
 def test(x, y):
-    return x*y
+    return x * y
+
 
 def protein_weight(Q, Mw):
-    return Q*Mw*1000
+    return Q * Mw * 1000
+
 
 def protein_quentity(Q):
-    NA = 6.02214086*(10**23)
-    return Q*NA
+    NA = 6.02214086 * (10**23)
+    return Q * NA
+
 
 def protein_mole(mass, Mw, mass_unit):
-    return mass*mass_unit/(Mw*1000)
+    return mass * mass_unit / (Mw * 1000)
+
 
 def protein_molar_conc(mol, V):
-    return mol/V
+    return mol / V
+
 
 def buffer_mass(Molar, Molar_unit, Vol, Vol_unit, Mw):
-    M = float(Molar)*float(Molar_unit)
-    V = float(Vol)*float(Vol_unit)
-    return (M*V)/Mw
+    M = float(Molar) * float(Molar_unit)
+    V = float(Vol) * float(Vol_unit)
+    return (M * V) / Mw
 
-def broth_mehod(broth_type,volume):
+
+def broth_mehod(broth_type, volume):
     '''
     several broth type and just multiply volume
     '''
-    dict_LB = {'NaCl':10, 'Tryptone':10, 'Yeast extract':5}
-    dict_LB_agar = {'NaCl':10, 'Tryptone':10, 'Yeast extract':5, 'Agar':15}
-    dict_SB = {'Tryptone':30, 'Yeast extract':20, 'MOPS':10, '5N NaOH':4 }
-    dict_SOB = {'NaCl':5, 'Tryptone':20, 'Yeast extract':5, 'MgSO4':0.5}
-    dict_2xYT = {'NaCl':5, 'Tryptone':16, 'Yeast extract':10}
-    dict_2xYT_GA = {'NaCl':5, 'Tryptone':16, 'Yeast extract':10, 'Glucose':18}
-    my_dict = {'ingredient1':100, 'ingredient2':10, 'ingredient3':1}
-    
+    dict_LB = {'NaCl': 10, 'Tryptone': 10, 'Yeast extract': 5}
+    dict_LB_agar = {'NaCl': 10, 'Tryptone': 10, 'Yeast extract': 5, 'Agar': 15}
+    dict_SB = {'Tryptone': 30, 'Yeast extract': 20, 'MOPS': 10, '5N NaOH': 4}
+    dict_SOB = {'NaCl': 5, 'Tryptone': 20, 'Yeast extract': 5, 'MgSO4': 0.5}
+    dict_2xYT = {'NaCl': 5, 'Tryptone': 16, 'Yeast extract': 10}
+    dict_2xYT_GA = {
+        'NaCl': 5,
+        'Tryptone': 16,
+        'Yeast extract': 10,
+        'Glucose': 18
+    }
+    my_dict = {'ingredient1': 100, 'ingredient2': 10, 'ingredient3': 1}
+
     if broth_type == 1:
         my_dict = dict_LB
     elif broth_type == 2:
@@ -70,5 +85,12 @@ def broth_mehod(broth_type,volume):
 
     # code the selection methods
     for key in my_dict:
-        my_dict[key] = my_dict[key]*volume
+        my_dict[key] = my_dict[key] * volume
     return my_dict
+
+
+def oligo(parameter_list):
+    '''
+    Tm values, Reverse compliments
+    '''
+    pass

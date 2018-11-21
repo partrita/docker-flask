@@ -6,7 +6,6 @@ from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm, OligoFor
 from calculator import test, protein_mole, buffer_mass, broth_mehod
 from alignment import Alignment
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '_5#y2L"F4Q8zxec]/'
 
@@ -58,14 +57,21 @@ def alignment():
     #     flask('Login request for user {}, remember_me={}'.format(
     #         form.username.data, form.remember_me.data))
     #     return redirect('/index')
-    return render_template('seq_alignment.html', title='Sequence alignment', form=form, result=result)
+    return render_template(
+        'seq_alignment.html',
+        title='Sequence alignment',
+        form=form,
+        result=result)
 
-@app.route('/getfile') # this is a job for GET, not POST
+
+@app.route('/getfile')  # this is a job for GET, not POST
 def getfile():
-    return send_file('static/alignment_result.txt',
-                     mimetype='text/*',
-                     attachment_filename='alignment_result.txt',
-                     as_attachment=True)
+    return send_file(
+        'static/alignment_result.txt',
+        mimetype='text/*',
+        attachment_filename='alignment_result.txt',
+        as_attachment=True)
+
 
 @app.route('/molar', methods=['GET', 'POST'])
 # def submit():
@@ -83,11 +89,15 @@ def calculate():
         mass = form.mass.data
         volume = form.volume.data
         result = protein_mole(mass, molecular_weight,
-                              mass_unit)*1000/(volume*volume_unit)
+                              mass_unit) * 1000 / (volume * volume_unit)
     else:
         result = None
 
-    return render_template('cal_molar.html', form=form, result=result, title='Protein molar calculator')
+    return render_template(
+        'cal_molar.html',
+        form=form,
+        result=result,
+        title='Protein molar calculator')
 
 
 @app.route('/buffer', methods=['GET', 'POST'])
@@ -99,27 +109,30 @@ def make_buffer():
         molar_concentration_unit = form.molar_unit.data
         volume = form.volume.data
         volume_unit = form.volume_unit.data
-        result_mg = buffer_mass(molar_concentration,
-                             molar_concentration_unit, volume, volume_unit, molecular_weight)
-        result_g = result_mg/1000
-        result = {'g': result_g,'mg': result_mg }
+        result_mg = buffer_mass(molar_concentration, molar_concentration_unit,
+                                volume, volume_unit, molecular_weight)
+        result_g = result_mg / 1000
+        result = {'g': result_g, 'mg': result_mg}
     else:
         result = None
 
-    return render_template('cal_buffer.html', form=form, result=result, title='Buffer calculator')
+    return render_template(
+        'cal_buffer.html', form=form, result=result, title='Buffer calculator')
+
 
 @app.route('/broth', methods=['GET', 'POST'])
 def make_broth():
     form = BrothForm()
     result = None
     if request.method == 'POST':
-    # if form.validate_on_submit():
+        # if form.validate_on_submit():
         broth_type = int(form.broth_type.data)
         volume = float(form.volume.data)
         volume_unit = float(form.volume_unit.data)
-        result = broth_mehod(broth_type, volume*volume_unit)
+        result = broth_mehod(broth_type, volume * volume_unit)
         # print result
-    return render_template('cal_broth.html', form=form, result=result, title='Broth calculator')
+    return render_template(
+        'cal_broth.html', form=form, result=result, title='Broth calculator')
 
 
 @app.route('/oligo', methods=['GET', 'POST'])
@@ -129,7 +142,8 @@ def oligo():
     if form.validate_on_submit():
         oligo = form.query_seq.data
         result = 'Test result'
-    return render_template('cal_oligo.html', title='Oligo calculator', form=form, result=result)
+    return render_template(
+        'cal_oligo.html', title='Oligo calculator', form=form, result=result)
 
 
 if __name__ == '__main__':
