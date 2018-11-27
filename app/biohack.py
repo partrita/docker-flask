@@ -2,6 +2,7 @@ from Bio import SeqIO, pairwise2
 from Bio.Seq import Seq
 from Bio.Alphabet import IUPAC
 from Bio.SeqRecord import SeqRecord
+from Bio.SeqUtils import GC, MeltingTemp
 
 
 def read_fasta(fp):
@@ -112,3 +113,22 @@ def Alignment(target_seq, query_seq):
     #     #     PRO_result[seq_record.id + '_' + i] = pairwise2.format_alignment(*alignments[0])
     # result.append(DNA_result)
     # return result
+
+
+def Oligo(target_dna):
+    '''
+    return should be dict type, GC_contents, Tm_value, Reverse compliment
+    '''
+    result = {
+        'GC_contents': 0,
+        'Tm_value': 0,
+        'Complement_seq': 0,
+        'Reverse_complement_seq': 0
+    }
+    dna = Seq(target_dna)  # set biopython seq type
+    result['GC_contents'] = '{:.2f} %'.format(GC(dna))
+    result['Tm_value'] = MeltingTemp.Tm_Wallace(dna)
+    result['Complement_seq'] = str(dna.complement())
+    result['Reverse_complement_seq'] = str(dna.reverse_complement())
+
+    return result

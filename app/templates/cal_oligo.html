@@ -9,7 +9,7 @@
             height="72">
         <h2>올리고 계산기</h2>
         <p class="lead">
-            만들고자 하는 배양액의 양을 입력하면 조성을 계산해줍니다.
+            DNA 서열을 입력하면 알아서 계산해줍니다.
         </p>
     </div>
     <div class="row">
@@ -28,10 +28,10 @@
                         <h6 class="my-0">
                             {{ key|e }}
                         </h6>
-                        <strong>
+                        <p>
                             {{ value|e }}
-                        </strong>
-                        <small class="text-muted">g</small>
+                        </p>
+                       
                     </div>
                 </li>
                 {% endfor %}
@@ -44,22 +44,9 @@
             <form method=post action="">
                 {{form.csrf_token}}
                 <div class="mb-3">
-                    <label>필요한 배양액의 양</label>
+                    <label>분석할 DNA 서열</label>
                     <div class="row">
-                        <div class="col-md-5 mb-3">
-                            {{ form.volume(class="form-control") }}
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            {{ form.volume_unit(class="custom-select d-block w-100") }}
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label>배양액 종류</label>
-                    <div class="row">
-                        <div class="col-md-5 mb-3">
-                            {{ form.broth_type(class="custom-select d-block w-100") }}
-                        </div>
+                            {{ form.target_seq(class="form-control") }}
                     </div>
                 </div>
                 <hr class="mb-4">

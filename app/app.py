@@ -4,7 +4,7 @@
 from flask import Flask, render_template, request, send_file
 from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm, OligoForm
 from calculator import test, protein_mole, buffer_mass, broth_mehod
-from alignment import Alignment
+from biohack import Alignment, Oligo
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '_5#y2L"F4Q8zxec]/'
@@ -140,8 +140,8 @@ def oligo():
     form = OligoForm()
     result = None
     if form.validate_on_submit():
-        oligo = form.query_seq.data
-        result = 'Test result'
+        dna = form.target_seq.data
+        result = Oligo(dna)
     return render_template(
         'cal_oligo.html', title='Oligo calculator', form=form, result=result)
 

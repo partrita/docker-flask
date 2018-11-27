@@ -68,15 +68,7 @@ class OligoForm(FlaskForm):
         widget=TextArea(),
         validators=[DataRequired()],
         render_kw={
-            "rows": 2,
-            "cols": 7
-        })
-    query_seq = TextAreaField(
-        'query_sequence',
-        widget=TextArea(),
-        validators=[DataRequired()],
-        render_kw={
-            "rows": 2,
-            "cols": 7
+            "rows": 4,
+            "cols": 10
         })
     submit = SubmitField('Calculate!')
