@@ -132,3 +132,14 @@ def Oligo(target_dna):
     result['Reverse_complement_seq'] = str(dna.reverse_complement())
 
     return result
+
+
+def Translate(target_dna):
+    dna_seq = Seq(target_dna)
+    forward_1 = dna_seq.seq[0::].translate()
+    forward_2 = dna_seq.seq[1::].translate()
+    forward_3 = dna_seq.seq[2::].translate()
+    reverse_1 = dna_seq.seq[:0:-1].translate()  # reverse frame
+    reverse_2 = dna_seq.seq[:1:-1].translate()
+    reverse_3 = dna_seq.seq[:2:-1].translate()
+    pass
