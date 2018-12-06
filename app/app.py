@@ -143,6 +143,9 @@ def oligo():
 def trans():
     form = TranslateForm()
     result = None
+    if form.validate_on_submit():
+        dna = form.target_seq.data
+        result = Translate(dna)
     return render_template('cal_translate.html', form=form, result=result)
 
 

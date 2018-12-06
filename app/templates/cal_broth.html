@@ -15,13 +15,13 @@
     <div class="row">
         <!-- show_results  -->
         <div class="col-md-4 order-md-2 mb-4">
+            {% if result != None %}
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your Results</span>
                 <!-- <span class="badge badge-secondary badge-pill">3</span> -->
             </h4>
 
             <ul class="list-group mb-3">
-                {% if result != None %}
                 <!-- iteritems only works in python2, use item for python3 -->
                 {% for key, value in result.iteritems() %}
                 <li class="list-group-item d-flex justify-content-between">
@@ -36,8 +36,8 @@
                     </div>
                 </li>
                 {% endfor %}
-                {% endif %}
             </ul>
+            {% endif %}
         </div>
         <!-- inputform -->
         <div class="col-md-8 order-md-1">

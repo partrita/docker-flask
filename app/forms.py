@@ -87,4 +87,4 @@ class TranslateForm(FlaskForm):
             "rows": 4,
             "cols": 10
         })
-    submit = SubmitField('Calculate!')
+    submit = SubmitField('Translate!')

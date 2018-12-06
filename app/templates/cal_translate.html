@@ -5,23 +5,24 @@
 <div class="container">
     <!-- description -->
     <div class="py-5 text-center">
-        <!-- <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/calculator.png')}}" alt="" width="72"
-            height="72"> -->
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/book.png')}}" alt="" width="72"
+            height="72">
         <h2>TRANSLATE</h2>
         <p class="lead">
-            DNA 서열을 입력하면 알아서 Translate 합니다.
+            DNA 서열을 입력하면 알아서 번역 합니다.
         </p>
     </div>
     <div class="row">
         <!-- show_results  -->
-        <div class="col-md-4 order-md-2 mb-4">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <div class="col-md-12 order-md-2 mb-3">
+            {% if result != None %}
+            <h4 class="d-flex justify-content-between align-items-center mb-2">
                 <span class="text-muted">Your Results</span>
-                <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+                <span class="badge badge-secondary badge-pill">6</span>
             </h4>
+                <p> * 는 Stop codon을 의미 합니다. </p>
 
-            <ul class="list-group mb-3">
-                {% if result != None %}
+            <ul class="list-group mb-2">
                 {% for key, value in result.iteritems() %}
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
@@ -35,23 +36,20 @@
                     </div>
                 </li>
                 {% endfor %}
-                {% endif %}
             </ul>
+            {% endif %}
         </div>
         <!-- inputform -->
-        <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Input section</h4>
+        <div class="col-md-12 order-md-1 mb-3">
+            <h4 class="mb-3">번역 할 DNA 서열</h4>
             <form method=post action="">
                 {{form.csrf_token}}
                 <div class="mb-3">
-                    <label>분석할 DNA 서열</label>
-                    <div class="row">
                             {{ form.target_seq(class="form-control") }}
-                    </div>
                 </div>
-                <hr class="mb-4">
+                <div class='md-3'>
                 {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
-                <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Calculate!</button> -->
+                </div>
             </form>
         </div>
 

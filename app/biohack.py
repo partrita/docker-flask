@@ -135,11 +135,24 @@ def Oligo(target_dna):
 
 
 def Translate(target_dna):
+    '''
+    return should be dict type
+    >>> gene.translate(table="Bacterial", to_stop=True)
+    Seq('VKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGHWRDH...HHR')
+    '''
+    result = {
+        'forward_1': '',
+        'forward_2': '',
+        'forward_3': '',
+        'reverse_1': '',
+        'reverse_2': '',
+        'reverse_3': '',
+    }
     dna_seq = Seq(target_dna)
-    forward_1 = dna_seq.seq[0::].translate()
-    forward_2 = dna_seq.seq[1::].translate()
-    forward_3 = dna_seq.seq[2::].translate()
-    reverse_1 = dna_seq.seq[:0:-1].translate()  # reverse frame
-    reverse_2 = dna_seq.seq[:1:-1].translate()
-    reverse_3 = dna_seq.seq[:2:-1].translate()
-    pass
+    result['forward_1'] = str(dna_seq[0::].translate())
+    result['forward_2'] = str(dna_seq[1::].translate())
+    result['forward_3'] = str(dna_seq[2::].translate())
+    result['reverse_1'] = str(dna_seq[:0:-1].translate())  # reverse frame
+    result['reverse_2'] = str(dna_seq[:1:-1].translate())
+    result['reverse_3'] = str(dna_seq[:2:-1].translate())
+    return result
