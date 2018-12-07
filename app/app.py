@@ -133,7 +133,7 @@ def oligo():
     form = OligoForm()
     result = None
     if form.validate_on_submit():
-        dna = form.target_seq.data
+        dna = ''.join(form.target_seq.data.split())
         result = Oligo(dna)
     return render_template(
         'cal_oligo.html', title='Oligo calculator', form=form, result=result)
@@ -144,7 +144,7 @@ def trans():
     form = TranslateForm()
     result = None
     if form.validate_on_submit():
-        dna = form.target_seq.data
+        dna = ''.join(form.target_seq.data.split())
         result = Translate(dna)
     return render_template('cal_translate.html', form=form, result=result)
 

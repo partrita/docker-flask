@@ -123,13 +123,15 @@ def Oligo(target_dna):
         'GC_contents': 0,
         'Tm_value': 0,
         'Complement_seq': 0,
-        'Reverse_complement_seq': 0
+        'Reverse_complement_seq': 0,
+        'Length_of_oligo': 0
     }
     dna = Seq(target_dna)  # set biopython seq type
     result['GC_contents'] = '{:.2f} %'.format(GC(dna))
     result['Tm_value'] = MeltingTemp.Tm_Wallace(dna)
     result['Complement_seq'] = str(dna.complement())
     result['Reverse_complement_seq'] = str(dna.reverse_complement())
+    result['Length_of_oligo'] = str(len(dna))
 
     return result
 
@@ -141,12 +143,12 @@ def Translate(target_dna):
     Seq('VKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGHWRDH...HHR')
     '''
     result = {
-        'forward_1': '',
-        'forward_2': '',
-        'forward_3': '',
-        'reverse_1': '',
-        'reverse_2': '',
         'reverse_3': '',
+        'reverse_2': '',
+        'reverse_1': '',
+        'forward_1': '',
+        'forward_3': '',
+        'forward_2': '',
     }
     dna_seq = Seq(target_dna)
     result['forward_1'] = str(dna_seq[0::].translate())
@@ -155,4 +157,5 @@ def Translate(target_dna):
     result['reverse_1'] = str(dna_seq[:0:-1].translate())  # reverse frame
     result['reverse_2'] = str(dna_seq[:1:-1].translate())
     result['reverse_3'] = str(dna_seq[:2:-1].translate())
+
     return result
