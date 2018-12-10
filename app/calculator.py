@@ -1,7 +1,4 @@
 import math
-from Bio.Seq import Seq
-from Bio.Alphabet import IUPAC
-from Bio.SeqRecord import SeqRecord
 
 # Calculation formulas.
 
@@ -87,10 +84,3 @@ def broth_mehod(broth_type, volume):
     for key in my_dict:
         my_dict[key] = my_dict[key] * volume
     return my_dict
-
-
-def oligo(parameter_list):
-    '''
-    Tm values, Reverse compliments
-    '''
-    pass
