@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <!-- show_results  -->
-        <div class="col-md-12 order-md-2 mb-3">
+        <div class="col-md-12 order-md-1 mb-3">
             {% if result != None %}
             <h4 class="d-flex justify-content-between align-items-center mb-2">
                 <span class="text-muted">Your Results</span>
@@ -40,7 +40,7 @@
             {% endif %}
         </div>
         <!-- inputform -->
-        <div class="col-md-12 order-md-1 mb-3">
+        <div class="col-md-12 order-md-2 mb-3">
             <h4 class="mb-3">번역 할 DNA 서열</h4>
             <form method=post action="">
                 {{form.csrf_token}}
