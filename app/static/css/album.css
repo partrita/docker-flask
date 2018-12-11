@@ -25,6 +25,11 @@
   /* z-index:1; */
 }
 
+.portfolio-head {
+  background-image: url('/static/img/portfolio_head.jpg');
+  /* background-size: 100% 100%; */
+  background-size: cover;
+}
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: calc(var(--jumbotron-padding-y) * 2);

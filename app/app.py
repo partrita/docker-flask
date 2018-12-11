@@ -51,7 +51,9 @@ def alignment():
     form = AlignmentForm()
     result = None
     if form.validate_on_submit():
-        Alignment(form.target_seq.data, form.query_seq.data)
+        target = ''.join(form.target_seq.data.split())
+        query = ''.join(form.query_seq.data.split())
+        Alignment(target, query)
         result = 'Download'
     return render_template(
         'seq_alignment.html',
