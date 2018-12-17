@@ -41,7 +41,6 @@
                 {{form.csrf_token}}
 
                 <div class="mb-3">
-                    {% comment %} {{ form.molecular_weight.label }} {% endcomment %}
                     <label for="userinput1">단백질의 크기(kDa)</label>
                     <div class="row">
 
@@ -51,15 +50,6 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="userinput3">총 부피</label>
-                    <div class="row">
-                        <div class="col-md-5 mb-3">
-                            {{ form.volume(class="form-control") }}
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            {{ form.volume_unit(class="custom-select d-block w-100") }}
-                        </div>
-                    </div>
                     <label for="userinput2">들어있는 단백질의 양</label>
                     <div class="row">
                         <div class="col-md-5 mb-3">
@@ -67,6 +57,15 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             {{ form.mass_unit(class="custom-select d-block w-100") }}
+                        </div>
+                    </div>
+                    <label for="userinput3">총 부피</label>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            {{ form.volume(class="form-control") }}
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            {{ form.volume_unit(class="custom-select d-block w-100") }}
                         </div>
                     </div>
                     <p>예를 들어 농도 1mg/ml은 1ml에 1mg이 들어 있는것입니다.</p>
