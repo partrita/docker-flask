@@ -1,9 +1,10 @@
 #!flask/bin/python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request, send_file
-from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm, OligoForm, TranslateForm
-from calculator import test, protein_mole, buffer_mass, broth_mehod
+from flask import Flask, render_template, send_file
+from forms import AlignmentForm, ConversionForm, BufferForm, BrothForm, \
+ OligoForm, TranslateForm
+from calculator import protein_mole, buffer_mass, broth_mehod
 from biohack import Alignment, Oligo, Translate
 
 app = Flask(__name__)
@@ -135,7 +136,7 @@ def oligo():
         result = Oligo(dna)
     return render_template(
             'cal_oligo.html', form=form, result=result,
-             title='Oligo calculator')
+            title='Oligo calculator')
 
 
 @app.route('/translate', methods=['GET', 'POST'])
