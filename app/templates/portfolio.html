@@ -2,9 +2,10 @@
 
 {% block content %}
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light portfolio-head wow fadeIn">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light portfolio-head wow fadeIn">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Taeyoon Kim</h1>
+        <h1 class="display-4 font-weight-light-">Taeyoon</h1>
+        <h1 class="display-4 font-weight-bold">Kim</h1>
         <p class="lead font-weight-normal">
         하루 종일 지속되는 배터리를 탑재하고, 어떤 일도 거뜬한 만능이랍니다.
         </p>
@@ -14,82 +15,92 @@
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeIn">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInLeft">
     <div class="col-md-6 bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden ">
-        <div class="my-3 py-3 wow bounce">
-            <h2 class="display-5">Biotech</h2>
+        <div class="my-3 py-3">
+            <h2 class="display-5">Biology</h2>
             <p class="lead">And an even wittier subheading.</p>
         </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <img class="my-2 img-responsive" src="{{ url_for('static', filename='img/portfolio_1.png')}}" alt="Image1" width="280" height="280">
+        </div>
     </div>
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3 wow bounce">
-            <h2 class="display-5">Computer science</h2>
-            <p class="lead">And an even wittier subheading.</p>
+    <div class="col-md-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5 text-muted">subtitle</h2>
+            <p class="lead text-muted">And an even wittier subheading.</p>
+            <h2 class="display-5 text-muted">subtitle</h2>
+            <p class="lead text-muted">And an even wittier subheading.</p>
+            <h2 class="display-5 text-muted">subtitle</h2>
+            <p class="lead text-muted">And an even wittier subheading.</p>
+            
         </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <!-- <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
     </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeIn">
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInRight">
+    <div class="col-md-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
             <h2 class="display-5">Machine learning</h2>
             <p class="lead">And an even wittier subheading.</p>
         </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <!-- <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
     </div>
     <div class="col-md-6 bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-</div>
-
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow slideInRight">
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-            <h2 class="display-5">Another headline</h2>
+            <h2 class="display-5">Computer science</h2>
             <p class="lead">And an even wittier subheading.</p>
         </div>
         <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow slideInRight">
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-</div>
-
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow zoomIn">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
         <div class="col-md-12 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
+                <h2 class="display-5">Second tilte</h2>
                 <p class="lead">And an even wittier subheading.</p>
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    </div>
             </div>
-            <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
         </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInLeft">
+    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+            <blockquote class="blockquote text-center">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInRight">
+    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
 </div>
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUP">
@@ -102,6 +113,27 @@
             </div>
         </div>
 </div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow flipInX">
+        <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                <h2 class="display-5 text-muted">Another headline</h2>
+                <p class="lead text-muted">And an even wittier subheading.</p>
+            </div>
+        </div>
+        <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5 text-muted">Another headline</h2>
+                <p class="lead text-muted">And an even wittier subheading.</p>
+            </div>
+        </div>
+        <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5 text-muted">Another headline</h2>
+                    <p class="lead text-muted">And an even wittier subheading.</p>
+                </div>
+            </div>
+    </div>
 
 
 {% endblock %} 
