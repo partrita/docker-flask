@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light portfolio-1 wow fadeIn">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light portfolio-1 wow fadeInUp">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
         <h1 class="display-4 font-weight-light-">Taeyoon <strong>Kim</strong></h1>
         <p class="lead font-weight-normal">
-        하루 종일 지속되는 배터리를 탑재하고, 어떤 일도 거뜬한 만능이랍니다.
+        하루 종일 지속되는 배터리를 탑재하고, 작지만 강한 어떤 일도 거뜬한 만능이랍니다.
         </p>
         <a class="btn btn-outline-secondary btn-sm" href="#">Coming soon</a>
     </div>
@@ -14,25 +14,49 @@
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInRight">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
         <div class="col-md-6 bg-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
-                <h2 class="display-5">Summary1</h2>
-                <p class="lead">And an even wittier subheading.</p>
+                <h2 class="display-5">요약</h2>
+                <p class="lead">
+                        <ul class="list-unstyled">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Integer molestie lorem at massa</li>
+                                <li>Facilisis in pretium nisl aliquet</li>
+                                <li>Nulla volutpat aliquam velit
+                                </li>
+                                <li>Faucibus porta lacus fringilla vel</li>
+                                <li>Aenean sit amet erat nunc</li>
+                                <li>Eget porttitor lorem</li>
+                              </ul>
+                </p>
             </div>
         </div>
         <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 py-3">
                 <h2 class="display-5">Summary2</h2>
-                <p class="lead">And an even wittier subheading.</p>
+                <p class="lead">라이프 사이클(LCA) 평가 기준, 온실가스 총 배출량은 340kg CO<sub>2</sub>입니다.</p>
             </div>
         </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 portfolio-2 wow fadeInUp" style="height: 200px;">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp" style="height: 200px;">
+        <div class="col-md-12 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0 display-5">
+                            If we knew what we were doing, it wouldn’t be called research.
+                        </p>
+                        <footer class="blockquote-footer">
+                            Albert Einstein
+                        </footer>
+                    </blockquote>
+            </div>
+        </div>
 </div>
-    
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInLeft">
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
     <div class="col-md-6 bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden ">
         <div class="my-3 py-3">
             <h2 class="display-5">Structural biology</h2>
@@ -46,9 +70,9 @@
     </div>
     <div class="col-md-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-            <h2 class="display-5 ">500% 향상</h2>
+            <h2 class="display-5 ">숫자로 말하는 성능</h2>
             <p class="lead text-muted">And an even wittier subheading.</p>
-            <h2 class="display-5 ">subtitle</h2>
+            <h2 class="display-5 ">연결 및 확장</h2>
             <p class="lead text-muted">And an even wittier subheading.</p>
             <h2 class="display-5 ">subtitle</h2>
             <p class="lead text-muted">And an even wittier subheading.</p>
@@ -58,11 +82,11 @@
     </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInRight">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
     <div class="col-md-6 bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
-            <h2 class="display-5">Computer science</h2>
-            <p class="lead">Better, faster and more.</p>
+            <h2 class="display-5">결코 작지 않은 차이</h2>
+            <p class="lead">데이터 과학자, 머신러닝과 인공지능 그리고 웹개발.</p>
         </div>
         <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
                 <img class="my-2 img-responsive" src="{{ url_for('static', filename='img/portfolio_2.png')}}" alt="Image2" width="280" height="280">
@@ -71,22 +95,22 @@
     <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
             <h2 class="display-5">Python</h2>
-            <p class="lead">인생은 짧습니다. 파이썬을 씁니다.</p>
+            <p class="lead">짧은 인생, 파이썬을 씁니다.</p>
             <h2 class="display-5 text-muted">Javascript</h2>
-            <p class="lead text-muted">웹이 미래입니다.</p>
+            <p class="lead text-muted">웹은 미래입니다.</p>
             <h2 class="display-5 text-muted">R</h2>
             <p class="lead text-muted">통계분석의 고전역학.</p>
             <h2 class="display-5 text-muted">Julia</h2>
-            <p class="lead text-muted">나도 까먹는 힙한 코딩.</p>
+            <p class="lead text-muted">홀로 힙한 코딩.</p>
         </div>
         <!-- <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
     </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 portfolio-3 wow fadeInUp" style="height: 200px;">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 portfolio-2 wow fadeInUp" style="height: 200px;">
     </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInLeft">
+<!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
     <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
             <h2 class="display-5">Another headline</h2>
@@ -104,21 +128,9 @@
             </blockquote>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light portfolio-head wow fadeIn">
-        <div class="col-md-6 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-light-">Second section </h1>
-            <p class="lead font-weight-normal">
-            두번째 섹션입니다.
-            </p>
-            <!-- <a class="btn btn-outline-secondary btn-sm" href="#">Coming soon</a> -->
-        </div>
-        <div class="product-device shadow-sm d-none d-md-block"></div>
-        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInRight">
+<!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUp">
     <div class="col-md-6 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
             <h2 class="display-5">Another headline</h2>
@@ -133,39 +145,30 @@
         </div>
         <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
-</div>
-
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 wow fadeInUP">
-        <div class="col-md-12 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-            </div>
-        </div>
-</div>
+</div> -->
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
         <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden wow flipInX">
             <div class="my-3 p-3">
-                <h2 class="display-5">무료 배송</h2>
-                <p class="lead text-muted">And an even wittier subheading.</p>
+                <h2 class="display-4">도움이 필요하다면</h2>
+                <p class="lead text-muted">질문이 있으신가요? 전문가와 온라인으로 상담하거나 이메일을 보내세요.</p>
+                <p class="text-primary"><a href="#">문의하기</a></p>
             </div>
         </div>
         <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden wow flipInX">
             <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead text-muted">And an even wittier subheading.</p>
+                <h2 class="display-4">개인 맞춤 설정</h2>
+                <p class="lead text-muted">온라인 또는 현실에서 활용하는 방법을 알려드립니다.</p>
+                <p class="text-primary"><a href="#">더 알아보기</a></p>
             </div>
         </div>
         <div class="col-md-4 bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden wow flipInX">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead text-muted">And an even wittier subheading.</p>
-                </div>
+            <div class="my-3 py-3">
+                <h2 class="display-4">무료 배송</h2>
+                <p class="lead text-muted">채용시 계신 곳에서도 편하게 사용할 수 있도록, 정해진 시간에 출근합니다.</p>
+                <p class="text-primary"><a href="#">지금 채용하기</a></p>
+            </div>
             </div>
     </div>
-
 
 {% endblock %} 

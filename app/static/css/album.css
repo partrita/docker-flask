@@ -26,20 +26,16 @@
 }
 
 .portfolio-1 {
-  background-image: url('/static/img/portfolio_head_0.png');
+  background-image: url('/static/img/portfolio_head.png');
   background-size: 100% 100%;
   background-size: cover;
 }
 .portfolio-2 {
-  background-image: url('/static/img/portfolio_head_1.jpg');
+  background-image: url('/static/img/portfolio_qoutes.jpg');
   background-size: 100% 100%;
   background-size: cover;
 }
-.portfolio-3 {
-  background-image: url('/static/img/portfolio_head_2.jpg');
-  background-size: 100% 100%;
-  background-size: cover;
-}
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: calc(var(--jumbotron-padding-y) * 2);
