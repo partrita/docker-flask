@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
-    python-pip python-dev uwsgi-plugin-python \
+    python3-pip python3-dev uwsgi-plugin-python \
     nginx supervisor
 
 COPY nginx/flask.conf /etc/nginx/sites-available/
@@ -22,7 +22,7 @@ RUN mkdir -p /var/log/nginx/app /var/log/uwsgi/app /var/log/supervisor \
     && echo "daemon off;" >> /etc/nginx/nginx.conf \
     # upgrade pip and install required python packages
     # && pip install -U pip \
-    && pip install -r /tmp/requirements.txt \
+    && pip3 install -r /tmp/requirements.txt \
     # Due to pipenv bug
     # &&  pip install pipenv \
     # &&  pipenv install --system \
